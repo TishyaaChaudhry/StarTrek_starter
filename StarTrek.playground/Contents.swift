@@ -94,26 +94,31 @@ struct Officer: Comparable {
 Group 1
 */
 // Q4: Create an array of officer objects who captain starships
+let captainOfficers = captains.map { Officer(name: $0.key, ship: $0.value) }
+print("Captain officers: \(captainOfficers)")
 
 
 
 
 // Q5: Alphabetize the previous list by the captain's name
-
-
-
+let sortedCaptainOfficers = captainOfficers.sorted()
+print("Sorted captain officers: \(sortedCaptainOfficers)")
 
 /*:
 Group 2
 */
 // Q6: Create an array of officers serving as first officers who are also Vulcan
-
-
+let vulcanFirstOfficers = firstOfficers.keys
+    .filter { vulcanOfficers.contains($0) }
+    .map { Officer(name: $0, ship: firstOfficers[$0]!) }
+print("Vulcan first officers: \(vulcanFirstOfficers)")
 
 
 
 // Q7: How many these Vulcan first officers have names shorter than 5 characters?
-
+let shortNamedVulcanFirstOfficers = vulcanFirstOfficers.filter { $0.name.count < 5 }
+let numberOfShortNamedVulcans = shortNamedVulcanFirstOfficers.count
+print("Number of Vulcan first officers with names shorter than 5 characters: \(numberOfShortNamedVulcans)")
 
 
 
