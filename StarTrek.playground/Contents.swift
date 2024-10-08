@@ -38,22 +38,30 @@ var femaleOfficers: [String] = ["kira", "dax", "tpol", "janeway", "troi", "seven
 First, a set of warm-up problems for everyone
 */
 // Q0: How many human officers are there?
-
-
+let numHumanOfficers = humanOfficers.count
+print("Number of human officers: \(numHumanOfficers)")
 
 
 // Q1: What percentage of humans are female?
 
+let femaleHumanOfficers = humanOfficers.filter { femaleOfficers.contains($0) }
+let percentageOfFemaleHumans = (Double(femaleHumanOfficers.count) / Double(humanOfficers.count)) * 100
+print("Percentage of human officers that are female: \(percentageOfFemaleHumans)%")
 
 
 
 // Q2: How many first officers are human?
 
+let humanFirstOfficers = firstOfficers.keys.filter { humanOfficers.contains($0) }
+let numberOfHumanFirstOfficers = humanFirstOfficers.count
+print("Number of human first officers: \(numberOfHumanFirstOfficers)")
 
 
 
 // Q3: Get a list of females sorted by name
 
+let sortedFemaleOfficers = femaleOfficers.sorted()
+print("Sorted female officers: \(sortedFemaleOfficers)")
 
 
 
